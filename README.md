@@ -8,6 +8,7 @@
      
     $OutputFile = "table_extensions.csv"  
 
+//Files names extraction 
     "FirstPart" | Set-Content $OutputFile
     Get-ChildItem -Path $BaseDir -Recurse -Directory -Filter "AxTableExtension" | ForEach-Object {
         $axTableExtDir = $_.FullName
@@ -19,6 +20,8 @@
                 Add-Content $OutputFile $firstPart
                 Write-Host "Exécution du fichier : $file"
             }
+      }
     }
-}
-Write-Host "Le nom des Table ont été copiée dans $OutputFile"
+   
+//Output   
+      Write-Host "Le nom des Table ont été copiée dans $OutputFile"

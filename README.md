@@ -9,6 +9,7 @@
     $OutputFile = "table_extensions.csv"  
 
 //Files names extraction 
+
     "FirstPart" | Set-Content $OutputFile
     Get-ChildItem -Path $BaseDir -Recurse -Directory -Filter "AxTableExtension" | ForEach-Object {
         $axTableExtDir = $_.FullName
